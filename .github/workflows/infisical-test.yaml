@@ -10,7 +10,7 @@ jobs:
 
       - run: ls -la ${{ github.workspace }}
 
-      - uses: Infisical/secrets-loader-action@main
+      - uses: Infisical/secrets-loader-action@v1.0.0
         with:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
           client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}

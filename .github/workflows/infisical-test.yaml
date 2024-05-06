@@ -1,0 +1,17 @@
+name: Infisical secrets from environment variables
+
+on: [push]
+
+jobs:
+  secrets-fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Infisical/secrets-loader-action@test-3
+        with:
+          client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
+          client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
+          env-slug: "dev"
+          project-slug: "test-p-vu-r"
+          export-type: "env"
+          secret-path: "/"
+      - run: env

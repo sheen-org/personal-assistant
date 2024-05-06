@@ -11,7 +11,7 @@ jobs:
           client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
           env-slug: "dev"
           project-slug: "example-project-r-i3x"
-          export-type: "file"
+          export-type: "env"
           file-output-path: "./sample/"
           secret-path: "/"
       - run: ls

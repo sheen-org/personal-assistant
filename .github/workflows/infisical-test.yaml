@@ -2,7 +2,17 @@ name: Infisical secrets from environment variables
 
 on:
   push:
+    secrets:
+      MACHINE_IDENTITY_CLIENT_ID:
+        required: true
+      MACHINE_IDENTITY_CLIENT_SECRET:
+        required: true
   workflow_dispatch:
+    secrets:
+      MACHINE_IDENTITY_CLIENT_ID:
+        required: true
+      MACHINE_IDENTITY_CLIENT_SECRET:
+        required: true
   workflow_call:
     secrets:
       MACHINE_IDENTITY_CLIENT_ID:

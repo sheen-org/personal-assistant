@@ -5,9 +5,12 @@ jobs:
   secrets-fetch:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - run: ls -la ${{ github.workspace }}
 
-      - uses: Infisical/secrets-loader-action@file-test
+      - uses: Infisical/secrets-loader-action@main
         with:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
           client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
@@ -17,4 +20,4 @@ jobs:
           file-output-path: "/sample/"
           secret-path: "/"
 
-      - run: ls
+      - run: cat ${{ github.workspace }}/sample/.env

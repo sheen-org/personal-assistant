@@ -5,7 +5,7 @@ jobs:
   secrets-fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: Infisical/secrets-loader-action@main
+      - uses: Infisical/secrets-loader-action@file-test
         with:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
           client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}

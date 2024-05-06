@@ -1,12 +1,21 @@
 name: Infisical secrets from environment variables
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
+  workflow_call:
+    secrets:
+      MACHINE_IDENTITY_CLIENT_ID:
+        required: true
+      MACHINE_IDENTITY_CLIENT_SECRET:
+        required: true
 jobs:
   secrets-fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: Infisical/secrets-loader-action@test-3
+      - uses: Infisical/secrets-loader-action@main
         with:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
           client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}

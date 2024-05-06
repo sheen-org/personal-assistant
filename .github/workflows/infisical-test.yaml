@@ -17,7 +17,7 @@ jobs:
           env-slug: "dev"
           project-slug: "example-project-r-i3x"
           export-type: "file"
-          file-output-path: "/sample/"
+          file-output-path: "/sample/.env"
           secret-path: "/"
 
       - run: cat ${{ github.workspace }}/sample/.env

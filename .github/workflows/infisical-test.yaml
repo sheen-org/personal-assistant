@@ -2,11 +2,6 @@ name: Infisical secrets from environment variables
 
 on:
   push:
-    secrets:
-      MACHINE_IDENTITY_CLIENT_ID:
-        required: true
-      MACHINE_IDENTITY_CLIENT_SECRET:
-        required: true
   workflow_dispatch:
   workflow_call:
     secrets:
@@ -23,7 +18,7 @@ jobs:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
           client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
           env-slug: "dev"
-          project-slug: "test-p-vu-r"
+          project-slug: "example-project-r-i3x"
           export-type: "env"
           secret-path: "/"
       - run: env

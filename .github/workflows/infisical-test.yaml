@@ -8,6 +8,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - run: ls -la ${{ github.workspace }}
+
       - uses: Infisical/secrets-loader-action@file-test
         with:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
@@ -17,4 +19,5 @@ jobs:
           export-type: "file"
           file-output-path: "/sample/"
           secret-path: "/"
-      - run: env
+
+      - run: ls

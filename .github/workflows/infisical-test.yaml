@@ -14,4 +14,4 @@ jobs:
           export-type: "file"
           file-output-path: "sample/"
           secret-path: "/"
-      - run: ls
+      - run: env

@@ -5,6 +5,9 @@ jobs:
   secrets-fetch:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - uses: Infisical/secrets-loader-action@file-test
         with:
           client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}

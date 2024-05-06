@@ -4,11 +4,11 @@ on:
   push:
   workflow_dispatch:
   workflow_call:
-secrets:
-  MACHINE_IDENTITY_CLIENT_ID:
-    required: true
-  MACHINE_IDENTITY_CLIENT_SECRET:
-    required: true
+    secrets:
+      MACHINE_IDENTITY_CLIENT_ID:
+        required: true
+      MACHINE_IDENTITY_CLIENT_SECRET:
+        required: true
 jobs:
   secrets-fetch:
     runs-on: ubuntu-latest

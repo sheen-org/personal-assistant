@@ -19,5 +19,6 @@ jobs:
           export-type: "file"
           file-output-path: "/sample/.env"
           secret-path: "/"
+          include-imports: false
 
       - run: cat ${{ github.workspace }}/sample/.env
